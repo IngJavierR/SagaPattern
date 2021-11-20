@@ -56,6 +56,10 @@ public class OrderFacade implements IOrderFacade {
 
     @Override
     public void updateOrder(PaymentEventTO payment) {
-
+        if(payment.getStatus() == 1) {
+            orderDAO.setStatusForOrderDO("APPROVED", payment.getUuid());
+        }else{
+            orderDAO.setStatusForOrderDO("REJECTED", payment.getUuid());
+        }
     }
 }
