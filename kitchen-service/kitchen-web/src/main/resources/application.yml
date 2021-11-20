@@ -11,7 +11,7 @@ spring:
   application:
     name: kitchen-service
   profiles:
-    active: qa
+    active: dev
 
 server:
   port: 8200
