@@ -1,0 +1,11 @@
+apiVersion: configuration.konghq.com/v1
+kind: KongPlugin
+metadata:
+  name: oidc
+config:
+  discovery: http://192.168.1.133:8080/auth/realms/master/.well-known/openid-configuration
+  client_id: kong
+  client_secret: 6eea4ef7-1cc9-4e2d-a0ad-c8c266b83aea
+  realm: master
+  introspection_endpoint: http://192.168.1.133:8080/auth/realms/master/protocol/openid-connect/token/introspect
+plugin: oidc
